@@ -1,0 +1,25 @@
+
+Entering the given environment:
+```
+conda create -n tetris-ai python=3.10
+conda activate tetris-ai
+python -m pip install tensorflow keras tensorboard opencv-python numpy pillow tqdm pygame
+cd (saved folder directory)
+python run_model.py sample.keras
+```
+****
+To train/run a model in a given tetris environment (3, 4, 5 block etc), rename the file you would like to use to tetris.py
+****
+Train/execute:
+```shell
+# hyper parameters can be changed in the run.py script, resulting file defaults to being saved as # best.keras. To further train a model, change the modelFile variable in dqnagent.py to the     #corresponding file name as a string. (Such as “original.keras”)
+python run.py
+```
+View logs with `tensorboard`:
+```shell
+tensorboard --logdir ./logs
+```
+Play a game with an existing model (`original.keras` is nuno-faria's previously trained model that achieved more than 800k points, using 3 Relu layers with 32 neurons each):
+```shell
+python run_model.py original.keras
+```
